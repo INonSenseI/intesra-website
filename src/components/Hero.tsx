@@ -1,4 +1,9 @@
-import { WaterIcon, GasIcon, ElectricIcon, PhoneIcon } from "@/components/icons";
+import {
+  WaterIcon,
+  GasIcon,
+  ElectricIcon,
+  PhoneIcon,
+} from "@/components/icons";
 import { site } from "@/data/site";
 import { siteImages } from "@/data/siteImages";
 

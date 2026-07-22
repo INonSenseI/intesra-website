@@ -1,8 +1,15 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import { services } from "@/data/services";
-import { site } from "@/data/site";
 
 export default function Services() {
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("kontakt");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section id="sluzby" className="py-24 md:py-32 bg-surface">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -83,8 +90,9 @@ export default function Services() {
         {/* CTA */}
         <div className="mt-12 flex justify-center">
           <a
-            href={site.phoneHref}
-            className="font-display inline-flex items-center gap-3 px-8 py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95"
+            href="#kontakt"
+            onClick={handleScrollToContact}
+            className="font-display inline-flex items-center gap-3 px-8 py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
           >
             NEZÁVAZNÁ POPTÁVKA
           </a>
