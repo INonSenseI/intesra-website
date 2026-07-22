@@ -1,0 +1,10 @@
+# Jeden projekt v sekci "VYBRANÉ PROJEKTY".
+# Fotky se přidávají do TÉTO SLOŽKY (viz manuál) — pojmenování souborů rozhoduje,
+# jak se galerie zobrazí (posuvník před/po, mřížka fotek, nebo jedna fotka).
+
+Nazev: Rekonstrukce koupelny — Vinohrady
+Stitek: Rekonstrukce
+Rok: 2024
+Delka: 12 dní
+Poradi: 1
+Popis: Kompletní přestavba koupelny 8 m² v bytě z roku 1960. Nové rozvody, podlahové topení, italský obklad. Posunutím posuvníku uvidíte stav před a po.

@@ -1,0 +1,6 @@
+Nazev: Rekonstrukce koupelen
+Popis: Kompletní přestavba od projektu po předání. Obklady, sanita, rozvody, topení.
+Stitky: Turnkey, Záruka 5 let
+Ikona: koupelna
+Zvyraznit: ne
+Poradi: 2

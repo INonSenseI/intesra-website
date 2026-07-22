@@ -1,0 +1,6 @@
+Nazev: Novostavba — bytový komplex Letňany
+Stitek: Novostavba
+Rok: 2023
+Delka: 6 týdnů
+Poradi: 3
+Popis: Kompletní zdravotechnika pro 24 bytových jednotek. Ukázka detailů rozvodů vody, kanalizace, měření a regulace.

@@ -1,0 +1,14 @@
+# Základní údaje o firmě.
+# Formát: NázevPole: hodnota (dvojtečka a mezera odděluje pole od hodnoty)
+# Řádky začínající # se ignorují.
+
+Jmeno: Jakub Šrajer
+Zkratka: JŠ
+Role: Instalatér
+LetPraxe: 15
+Telefon: +420 777 123 456
+Email: jakub@srajer-instalater.cz
+Oblast: Ostrava a okolí
+Region: Frýdek-Místek · Ostrava · Okolí
+Vyjezd: Výjezd do 2 hodin
+OdpovedDoby: Odpovíme do 30 minut.
