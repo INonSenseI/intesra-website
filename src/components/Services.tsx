@@ -14,7 +14,8 @@ export default function Services() {
               SLUŽBY
             </h2>
             <p className="font-body max-w-sm text-sm leading-relaxed text-slate-500">
-              Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a odvedu práci na jedničku.
+              Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a
+              odvedu práci na jedničku.
             </p>
           </div>
         </div>
@@ -37,7 +38,11 @@ export default function Services() {
                     service.accent ? "bg-red/15" : "bg-surface"
                   }`}
                 >
-                  <Icon className={service.accent ? "text-red" : "text-navy-dark"} />
+                  <Icon
+                    className={`w-5 h-5 ${
+                      service.accent ? "text-red" : "text-navy-dark"
+                    }`}
+                  />
                 </div>
 
                 <h3
@@ -61,7 +66,9 @@ export default function Services() {
                     <span
                       key={tag}
                       className={`font-body text-xs px-2 py-1 rounded-sm font-medium uppercase tracking-wide ${
-                        service.accent ? "bg-white/10 text-white/70" : "bg-border/60 text-slate-600"
+                        service.accent
+                          ? "bg-white/10 text-white/70"
+                          : "bg-border/60 text-slate-600"
                       }`}
                     >
                       {tag}

@@ -6,5 +6,5 @@ Nazev: Opravy a havárie
 Popis: Prasklé potrubí, ucpané odtoky, kapající kohouty. Výjezd do 2 hodin, 7 dní v týdnu.
 Stitky: Havarijní servis, 24/7
 Ikona: klic
-Zvyraznit: ano
+Zvyraznit: ne
 Poradi: 1

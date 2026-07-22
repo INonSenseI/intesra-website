@@ -1,16 +1,73 @@
 import { useState, type FormEvent } from "react";
 import Eyebrow from "@/components/ui/Eyebrow";
-import { PhoneIcon, MailIcon, LocationIcon, CheckIcon } from "@/components/icons";
+import {
+  PhoneIcon,
+  MailIcon,
+  LocationIcon,
+  CheckIcon,
+} from "@/components/icons";
 import { site } from "@/data/site";
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+interface ContactFormData {
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+  website: string; // Honeypot pole
+}
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setSent(true);
+const INITIAL_FORM_STATE: ContactFormData = {
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+  website: "",
+};
+
+function useContactForm() {
+  const [form, setForm] = useState<ContactFormData>(INITIAL_FORM_STATE);
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const updateField = (key: keyof ContactFormData, value: string) => {
+    setForm((prev) => ({ ...prev, [key]: value }));
   };
+
+  const submitForm = async (e: FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMsg(null);
+
+    try {
+      const res = await fetch("/send-mail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Při odesílání došlo k chybě.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Nepodařilo se odeslat zprávu.";
+      setErrorMsg(message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { form, updateField, submitForm, sent, loading, errorMsg };
+}
+
+export default function Contact() {
+  const { form, updateField, submitForm, sent, loading, errorMsg } =
+    useContactForm();
 
   return (
     <section id="kontakt" className="py-24 md:py-32 bg-navy">
@@ -39,7 +96,9 @@ export default function Contact() {
                   <PhoneIcon className="text-white" strokeWidth={2.5} />
                 </div>
                 <div>
-                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">Telefon</div>
+                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
+                    Telefon
+                  </div>
                   <div className="font-display text-white font-bold text-[22px] group-hover:text-red-dark transition-colors">
                     {site.phoneDisplay}
                   </div>
@@ -54,7 +113,9 @@ export default function Contact() {
                   <MailIcon className="text-white/70" />
                 </div>
                 <div>
-                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">E-mail</div>
+                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
+                    E-mail
+                  </div>
                   <div className="font-body text-white font-medium text-[15px] group-hover:text-red-dark transition-colors">
                     {site.email}
                   </div>
@@ -69,7 +130,9 @@ export default function Contact() {
                   <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
                     Oblast působení
                   </div>
-                  <div className="font-body text-white font-medium text-[15px]">{site.serviceArea}</div>
+                  <div className="font-body text-white font-medium text-[15px]">
+                    {site.serviceArea}
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,11 +145,30 @@ export default function Contact() {
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 bg-red">
                   <CheckIcon size={28} className="text-white" />
                 </div>
-                <h3 className="font-display text-white mb-2 text-[32px] font-extrabold">OZVEME SE!</h3>
-                <p className="font-body text-white/50">Zpráva odeslána. {site.responseTime}</p>
+                <h3 className="font-display text-white mb-2 text-[32px] font-extrabold">
+                  OZVEME SE!
+                </h3>
+                <p className="font-body text-white/50">
+                  Zpráva odeslána. {site.responseTime}
+                </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+              <form
+                onSubmit={submitForm}
+                className="w-full flex flex-col gap-4"
+              >
+                {/* Honeypot ochrana proti spambotům (skryté pole) */}
+                <div className="hidden" aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={form.website}
+                    onChange={(e) => updateField("website", e.target.value)}
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormField
                     label="Jméno *"
@@ -94,14 +176,14 @@ export default function Contact() {
                     required
                     placeholder="Jan Novák"
                     value={form.name}
-                    onChange={(v) => setForm({ ...form, name: v })}
+                    onChange={(v) => updateField("name", v)}
                   />
                   <FormField
                     label="Telefon"
                     type="tel"
                     placeholder="+420 777 000 000"
                     value={form.phone}
-                    onChange={(v) => setForm({ ...form, phone: v })}
+                    onChange={(v) => updateField("phone", v)}
                   />
                 </div>
 
@@ -111,7 +193,7 @@ export default function Contact() {
                   required
                   placeholder="jan@email.cz"
                   value={form.email}
-                  onChange={(v) => setForm({ ...form, email: v })}
+                  onChange={(v) => updateField("email", v)}
                 />
 
                 <div>
@@ -123,16 +205,21 @@ export default function Contact() {
                     rows={5}
                     placeholder="Popište co potřebujete opravit nebo nainstalovat..."
                     value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    onChange={(e) => updateField("message", e.target.value)}
                     className="font-body w-full px-4 py-3 rounded-sm text-white placeholder-white/25 outline-none transition-all duration-200 resize-none bg-white/[0.06] border border-white/[0.12] text-[15px]"
                   />
                 </div>
 
+                {errorMsg && (
+                  <p className="font-body text-red text-sm mt-1">{errorMsg}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="font-display w-full py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 mt-2"
+                  disabled={loading}
+                  className="font-display w-full py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  ODESLAT POPTÁVKU
+                  {loading ? "ODESÍLÁM..." : "ODESLAT POPTÁVKU"}
                 </button>
               </form>
             )}
@@ -152,10 +239,19 @@ interface FormFieldProps {
   required?: boolean;
 }
 
-function FormField({ label, type, placeholder, value, onChange, required }: FormFieldProps) {
+function FormField({
+  label,
+  type,
+  placeholder,
+  value,
+  onChange,
+  required,
+}: FormFieldProps) {
   return (
     <div>
-      <label className="font-body block text-xs uppercase tracking-widest mb-2 text-white/40">{label}</label>
+      <label className="font-body block text-xs uppercase tracking-widest mb-2 text-white/40">
+        {label}
+      </label>
       <input
         type={type}
         required={required}
