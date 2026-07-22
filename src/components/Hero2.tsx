@@ -1,3 +1,6 @@
+import { site } from "@/data/site";
+import { siteImages } from "@/data/siteImages";
+
 export default function Hero() {
   const services = [
     { label: "VODA", icon: <WaterIcon /> },
@@ -10,13 +13,13 @@ export default function Hero() {
       {/* Left: photo panel */}
       <div className="relative w-full md:w-[42%] h-64 md:h-screen flex-shrink-0 bg-navy-dark">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=1200&fit=crop&auto=format"
+          src={siteImages.hero}
           alt="Profesionální instalatér při práci"
           className="w-full h-full object-cover opacity-[0.55] mix-blend-luminosity"
         />
         <div className="absolute left-0 top-0 bottom-0 flex items-center">
           <div className="pl-5 font-body text-[11px] font-semibold text-white/30 tracking-[0.3em] uppercase [writing-mode:vertical-rl] [transform:rotate(180deg)]">
-            Frýdek-Místek · Ostrava · Okolí
+            {site.regionTagline}
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-red" />
@@ -28,7 +31,7 @@ export default function Hero() {
         <div className="flex items-center justify-center md:justify-start gap-3 mb-8">
           <div className="h-px w-8 bg-red hidden md:block" />
           <span className="font-body text-[11px] font-semibold text-red tracking-[0.2em] uppercase text-center md:text-left">
-            Jakub Šrajer · 15 let praxe
+            {site.name} · {site.experienceYears} let praxe
           </span>
         </div>
 
@@ -71,18 +74,18 @@ export default function Hero() {
             Zavolejte přímo
           </p>
           <a
-            href="tel:+420777123456"
+            href={site.phoneHref}
             className="group inline-flex flex-row items-center justify-center md:justify-start gap-3 sm:gap-4 w-full md:w-auto"
           >
             <span className="font-display font-extrabold text-navy-dark leading-none tracking-tight text-3xl sm:text-4xl md:text-[clamp(32px,4.5vw,54px)] transition-colors duration-200 group-hover:text-red">
-              +420 777 123 456
+              {site.phoneDisplay}
             </span>
             <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-red transition-transform duration-200 group-hover:scale-110 shadow-sm">
               <PhoneIcon />
             </div>
           </a>
           <p className="font-body text-[13px] text-slate-400 mt-4 md:mt-3">
-            Výjezd do 2 hodin. Cena dohodnutá předem.
+            {site.responseWindow}. Cena dohodnutá předem.
           </p>
         </div>
       </div>
