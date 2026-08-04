@@ -1,0 +1,6 @@
+Nazev: Moderní koupelna
+Stitek: renovace
+Rok: 2026
+Delka: 50 hodin
+Poradi: 5
+Popis: Krásná renovace koupelny v Pržně.
