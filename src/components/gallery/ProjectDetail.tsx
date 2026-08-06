@@ -13,7 +13,7 @@ export default function ProjectDetail({ project, isEven, onImageOpen }: ProjectD
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-border rounded-sm overflow-hidden">
       {/* Média */}
-      <div className={`relative min-h-[320px] sm:min-h-[400px] md:min-h-[480px] ${!isEven ? "md:order-2" : ""}`}>
+      <div className={`relative h-[320px] sm:h-[400px] md:h-[480px] ${!isEven ? "md:order-2" : ""}`}>
         {project.mediaType === "single" && project.image && (
           <div
             className="relative h-full w-full group overflow-hidden cursor-zoom-in"

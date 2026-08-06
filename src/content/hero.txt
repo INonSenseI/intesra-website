@@ -1,0 +1,16 @@
+# Tři "štítky" v úvodní sekci webu (velký nápis VODA / PLYN / TEPLO vlevo od telefonu).
+# Ke každému patří dvojice řádků - Ikona a Text.
+#
+# Ikona musí být jedna z těchto hodnot: voda, plyn, teplo, elektrika
+# Text je nápis, který se vypíše vedle ikony (doporučeno velkými písmeny, jedno krátké slovo).
+#
+# Neplatná ikona nevadí - web to nerozbije, jen se zobrazí ikona vody místo ní.
+
+Ikona1: voda
+Text1: VODA
+
+Ikona2: plyn
+Text2: PLYN
+
+Ikona3: teplo
+Text3: TEPLO

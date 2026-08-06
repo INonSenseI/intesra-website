@@ -7,6 +7,7 @@ import {
   CheckIcon,
 } from "@/components/icons";
 import { site } from "@/data/site";
+import { texts } from "@/data/texts";
 
 interface ContactFormData {
   name: string;
@@ -78,13 +79,13 @@ export default function Contact() {
             <Eyebrow label="Kontakt" />
 
             <h2 className="font-display leading-none mb-8 text-white text-[clamp(40px,6vw,72px)] font-extrabold">
-              POJĎME TO
+              {texts.contactHeading1}
               <br />
-              VYŘEŠIT
+              {texts.contactHeading2}
             </h2>
 
             <p className="font-body mb-12 leading-relaxed text-white/60 text-[16px]">
-              Napište mi co potřebujete, rád se vám ozvu zpět.
+              {texts.contactIntro}
             </p>
 
             <div className="flex flex-col gap-4">
@@ -219,7 +220,7 @@ export default function Contact() {
                   disabled={loading}
                   className="font-display w-full py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {loading ? "ODESÍLÁM..." : "ODESLAT POPTÁVKU"}
+                  {loading ? "ODESÍLÁM..." : texts.contactButton}
                 </button>
               </form>
             )}

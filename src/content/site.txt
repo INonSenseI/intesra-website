@@ -5,10 +5,19 @@
 Jmeno: Jakub Šrajer
 Zkratka: JŠ
 Role: Instalatér
+
+# LetPraxe je nepovinné. Pokud tento řádek smažeš úplně (nebo necháš
+# "LetPraxe:" bez čísla), text "· X let praxe" se u úvodní stránky
+# vůbec nezobrazí a zbytek řádku zůstane v pořádku.
 LetPraxe: 15
+
 Telefon: +420 732 942 262
 Email: info@intesra.cz
 Oblast: Frýdek-Místek a okolí
 Region: Frýdek-Místek · Ostrava · Okolí
+
+# Vyjezd je taky nepovinné. Smaž celý řádek a věta "Cena dohodnutá předem."
+# se na úvodní stránce zobrazí sama, bez zmínky o výjezdu.
 Vyjezd: Výjezd do 2 hodin
+
 OdpovedDoby: Odpověd v den požadavku

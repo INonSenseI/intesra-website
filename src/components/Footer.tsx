@@ -1,4 +1,5 @@
 import { site } from "@/data/site";
+import LogoBadge from "@/components/ui/LogoBadge";
 
 const navLinks = [
   { label: "Služby", href: "#sluzby" },
@@ -11,9 +12,7 @@ export default function Footer() {
     <footer className="py-10 bg-white border-t border-border">
       <div className="max-w-6xl mx-auto px-5 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-7 h-7 rounded-sm flex items-center justify-center bg-red text-white font-display text-[13px] font-extrabold">
-            {site.initials}
-          </div>
+          <LogoBadge size="sm" />
           <span className="font-body text-sm font-semibold text-navy-dark">
             {site.name} — Instalatérství
           </span>

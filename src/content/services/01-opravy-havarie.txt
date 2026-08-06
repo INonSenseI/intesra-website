@@ -1,5 +1,5 @@
 # Jedna karta služby v sekci "SLUŽBY" na webu.
-# Ikona musí být jedna z: klic, koupelna, plamen, trubka, kuchyne, lupa
+# Ikona musí být jedna z: klic, koupelna, plamen, trubka, koleno, kapka, kuchyne, lupa
 # Zvyraznit: ano/ne — tmavá zvýrazněná karta (použij max u jedné služby)
 
 Nazev: Opravy a havárie

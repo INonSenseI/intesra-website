@@ -1,12 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import { siteImages } from "@/data/siteImages";
-
-const highlights = [
-  "Záruka na práci 2 roky",
-  "Výjezd do 2 hodin",
-  "Cena dohodnutá předem",
-  "Čistota na pracovišti",
-];
+import { texts } from "@/data/texts";
 
 export default function About() {
   return (
@@ -24,8 +18,10 @@ export default function About() {
                 className="w-full h-80 md:h-[480px] object-cover"
               />
               <div className="absolute bottom-4 left-4 px-4 py-3 rounded-sm bg-navy-dark">
-                <div className="font-body text-white/60 text-xs uppercase tracking-widest mb-1">Certifikát</div>
-                <div className="font-display text-white text-lg font-bold">Instalatér 1. třídy</div>
+                <div className="font-body text-white/60 text-xs uppercase tracking-widest mb-1">
+                  {texts.aboutBadgeSmall}
+                </div>
+                <div className="font-display text-white text-lg font-bold">{texts.aboutBadgeLarge}</div>
               </div>
             </div>
           </div>
@@ -35,22 +31,16 @@ export default function About() {
             <Eyebrow label="O mně" />
 
             <h2 className="font-display mb-6 leading-none text-[clamp(40px,6vw,64px)] font-extrabold text-navy-dark">
-              SPOLEHLIVOST
+              {texts.aboutHeading1}
               <br />
-              NA PRVNÍM MÍSTĚ
+              {texts.aboutHeading2}
             </h2>
 
-            <p className="font-body leading-relaxed mb-6 text-[16px] text-slate-600">
-              Jmenuji se Jakub Šrajer a instalatérskému řemeslu se věnuji již přes 15 let. Za tu dobu jsem
-              realizoval stovky zakázek — od rychlých oprav po kompletní rekonstrukce koupelen a kuchyní.
-            </p>
-            <p className="font-body leading-relaxed mb-10 text-[16px] text-slate-600">
-              Každou práci dokončuji načas, v dohodnutém rozsahu a s plnou zárukou. Po sobě vždy uklidím a
-              odvezu odpad. Žádná překvapení na faktuře.
-            </p>
+            <p className="font-body leading-relaxed mb-6 text-[16px] text-slate-600">{texts.aboutText1}</p>
+            <p className="font-body leading-relaxed mb-10 text-[16px] text-slate-600">{texts.aboutText2}</p>
 
             <div className="grid grid-cols-2 gap-4">
-              {highlights.map((text) => (
+              {texts.aboutHighlights.map((text) => (
                 <div key={text} className="flex items-start gap-2">
                   <span className="text-red font-bold flex-shrink-0">✓</span>
                   <span className="font-body text-sm font-medium text-navy-dark">{text}</span>

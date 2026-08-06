@@ -108,7 +108,18 @@ export function WaterIcon({ size = 36, className = "" }: IconProps) {
 
 export function GasIcon({ size = 36, className = "" }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={`overflow-visible ${className}`}>
+      <path d="M10 2h4" />
+      <path d="M12 2v3" />
+      <rect x="6" y="8" width="12" height="13" rx="3" />
+      <path d="M6 12h12" />
+    </svg>
+  );
+}
+
+export function FlameIcon({ size = 36, className = "" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={`overflow-visible ${className}`}>
       <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
     </svg>
   );
@@ -116,7 +127,7 @@ export function GasIcon({ size = 36, className = "" }: IconProps) {
 
 export function ElectricIcon({ size = 36, className = "" }: IconProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={`overflow-visible ${className}`}>
       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
     </svg>
   );
@@ -166,4 +177,22 @@ export function KitchenIcon({ size = 20, className = "" }: IconProps) {
 
 export function InspectionIcon({ size = 20, className = "" }: IconProps) {
   return <MagnifierIcon size={size} className={className} />;
+}
+
+export function ElbowPipeIcon({ size = 20, className = "" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M7 4v7a5 5 0 0 0 5 5h6" />
+      <circle cx="7" cy="4" r="1.3" fill="currentColor" stroke="none" />
+      <circle cx="18" cy="16" r="1.3" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function DropletIcon({ size = 20, className = "" }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 3.5C8.5 8 6.5 11 6.5 13.8a5.5 5.5 0 0 0 11 0c0-2.8-2-5.8-5.5-10.3z" />
+    </svg>
+  );
 }

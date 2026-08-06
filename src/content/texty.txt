@@ -1,0 +1,26 @@
+# Texty na webu. Postup úpravy je stejný jako u ostatních souborů (viz kapitola 2 návodu):
+# měň jen text za dvojtečkou, název pole a dvojtečku nech beze změny.
+# Když pole úplně smažeš nebo necháš prázdné, použije se původní výchozí text.
+
+# --- Úvodní stránka (Hero) ---
+HeroNadpis: Instalatérské technologie
+HeroPopis: Opravy · Rekonstrukce · Havárie
+
+# --- Sekce "O mně" ---
+OMneNadpis1: SPOLEHLIVOST
+OMneNadpis2: NA PRVNÍM MÍSTĚ
+OMneText1: Jmenuji se Jakub Šrajer a instalatérskému řemeslu se věnuji již přes 15 let. Za tu dobu jsem realizoval stovky zakázek — od rychlých oprav po kompletní rekonstrukce koupelen a kuchyní.
+OMneText2: Každou práci dokončuji načas, v dohodnutém rozsahu a s plnou zárukou. Po sobě vždy uklidím a odvezu odpad. Žádná překvapení na faktuře.
+OMneVyhody: Záruka na práci 2 roky, Výjezd do 2 hodin, Cena dohodnutá předem, Čistota na pracovišti
+OMneOdznakMaly: Certifikát
+OMneOdznakVelky: Instalatér 1. třídy
+
+# --- Sekce "Služby" ---
+SluzbyPopis: Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a odvedu práci na jedničku.
+SluzbyTlacitko: NEZÁVAZNÁ POPTÁVKA
+
+# --- Sekce "Kontakt" ---
+KontaktNadpis1: POJĎME TO
+KontaktNadpis2: VYŘEŠIT
+KontaktText: Napište mi co potřebujete, rád se vám ozvu zpět.
+KontaktTlacitko: ODESLAT POPTÁVKU

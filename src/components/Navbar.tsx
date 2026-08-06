@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { site } from "@/data/site";
+import LogoBadge from "@/components/ui/LogoBadge";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,9 +52,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
         {/* Logo / Brand */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-sm flex items-center justify-center bg-red text-white font-display text-base font-extrabold">
-            {site.initials}
-          </div>
+          <LogoBadge size="md" />
           <span className="font-body text-white font-semibold tracking-wide text-sm md:text-base">
             {site.name}{" "}
             <span className="opacity-50 font-normal hidden sm:inline">

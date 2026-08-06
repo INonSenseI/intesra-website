@@ -1,5 +1,6 @@
 import Eyebrow from "@/components/ui/Eyebrow";
 import { services } from "@/data/services";
+import { texts } from "@/data/texts";
 
 export default function Services() {
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -21,8 +22,7 @@ export default function Services() {
               SLUŽBY
             </h2>
             <p className="font-body max-w-sm text-sm leading-relaxed text-slate-500">
-              Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a
-              odvedu práci na jedničku.
+              {texts.servicesIntro}
             </p>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function Services() {
             onClick={handleScrollToContact}
             className="font-display inline-flex items-center gap-3 px-8 py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
           >
-            NEZÁVAZNÁ POPTÁVKA
+            {texts.servicesButton}
           </a>
         </div>
       </div>

@@ -3,8 +3,10 @@ import { parseFields } from "@/data/parseContent";
 import {
   WrenchIcon,
   BathroomIcon,
-  GasIcon,
+  FlameIcon,
   PipeIcon,
+  ElbowPipeIcon,
+  DropletIcon,
   KitchenIcon,
   MagnifierIcon,
 } from "@/components/icons";
@@ -22,8 +24,10 @@ export interface Service {
 const ICONS: Record<string, ComponentType<{ size?: number; className?: string }>> = {
   klic: WrenchIcon,
   koupelna: BathroomIcon,
-  plamen: GasIcon,
+  plamen: FlameIcon,
   trubka: PipeIcon,
+  koleno: ElbowPipeIcon,
+  kapka: DropletIcon,
   kuchyne: KitchenIcon,
   lupa: MagnifierIcon,
 };
