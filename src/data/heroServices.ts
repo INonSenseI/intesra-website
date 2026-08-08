@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import raw from "@/content/hero.txt?raw";
-import { parseFields } from "@/data/parseContent";
+import { parseFields, getField } from "@/data/parseContent";
 import { WaterIcon, GasIcon, FlameIcon, ElectricIcon } from "@/components/icons";
 
 export interface HeroService {
@@ -15,24 +15,28 @@ const ICONS: Record<string, ComponentType<{ size?: number; className?: string }>
   elektrika: ElectricIcon,
 };
 
-const defaults: [string, string][] = [
-  ["voda", "VODA"],
-  ["plyn", "PLYN"],
-  ["teplo", "TEPLO"],
-];
-
 const fields = parseFields(raw);
+const raw_value = getField(fields, "Sluzby");
 
-export const heroServices: HeroService[] = [1, 2, 3].map((slot) => {
-  const [defaultIcon, defaultLabel] = defaults[slot - 1];
-  const iconKey = (fields[`Ikona${slot}`] || defaultIcon).toLowerCase().trim();
-  const label = fields[`Text${slot}`]?.trim() || defaultLabel;
+// "Sluzby" je jedno pole s libovolným počtem položek oddělených "|", každá
+// ve tvaru "ikona:TEXT". Žádný pevný počet — může jich být jedna, tři nebo
+// deset, web se přizpůsobí. Prázdné/neplatné položky se přeskočí (schovají),
+// nerozbijí web.
+export const heroServices: HeroService[] = (raw_value ?? "")
+  .split("|")
+  .map((chunk) => chunk.trim())
+  .filter(Boolean)
+  .map((chunk) => {
+    const sepIndex = chunk.indexOf(":");
+    const iconKey = (sepIndex === -1 ? "" : chunk.slice(0, sepIndex)).toLowerCase().trim();
+    const label = (sepIndex === -1 ? chunk : chunk.slice(sepIndex + 1)).trim();
 
-  if (!ICONS[iconKey]) {
-    console.warn(
-      `[obsah] hero.txt: neznámá ikona "${fields[`Ikona${slot}`]}" u Ikona${slot}. Použita výchozí ikona vody.`,
-    );
-  }
+    if (!label) return null;
 
-  return { label, icon: ICONS[iconKey] ?? WaterIcon };
-});
+    const icon = ICONS[iconKey];
+    if (!icon) {
+      console.warn(`[obsah] hero.txt: neznámá ikona "${iconKey}" u položky "${chunk}". Použita výchozí ikona vody.`);
+    }
+    return { label, icon: icon ?? WaterIcon };
+  })
+  .filter((entry): entry is HeroService => entry !== null);

@@ -21,9 +21,11 @@ export default function Services() {
             <h2 className="font-display leading-none text-[clamp(40px,6vw,72px)] font-extrabold text-navy-dark">
               SLUŽBY
             </h2>
-            <p className="font-body max-w-sm text-sm leading-relaxed text-slate-500">
-              {texts.servicesIntro}
-            </p>
+            {texts.servicesIntro && (
+              <p className="font-body max-w-sm text-sm leading-relaxed text-slate-500">
+                {texts.servicesIntro}
+              </p>
+            )}
           </div>
         </div>
 
@@ -88,15 +90,17 @@ export default function Services() {
         </div>
 
         {/* CTA */}
-        <div className="mt-12 flex justify-center">
-          <a
-            href="#kontakt"
-            onClick={handleScrollToContact}
-            className="font-display inline-flex items-center gap-3 px-8 py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
-          >
-            {texts.servicesButton}
-          </a>
-        </div>
+        {texts.servicesButton && (
+          <div className="mt-12 flex justify-center">
+            <a
+              href="#kontakt"
+              onClick={handleScrollToContact}
+              className="font-display inline-flex items-center gap-3 px-8 py-4 bg-red text-white font-bold rounded-sm text-xl tracking-wide transition-all duration-200 hover:opacity-90 active:scale-95 cursor-pointer"
+            >
+              {texts.servicesButton}
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,16 +1,21 @@
-# Texty na webu. Postup úpravy je stejný jako u ostatních souborů (viz kapitola 2 návodu):
+# Texty na webu. Postup úpravy je stejný jako u ostatních souborů (viz kapitola 2):
 # měň jen text za dvojtečkou, název pole a dvojtečku nech beze změny.
-# Když pole úplně smažeš nebo necháš prázdné, použije se původní výchozí text.
+#
+# Když pole úplně smažeš nebo necháš prázdné, odpovídající text na webu
+# zmizí — stránka se sama hezky srovná, nic se nerozbije.
+#
+# U nadpisů a odstavců napiš znak "|" tam, kde chceš zalomit na nový
+# řádek/odstavec. Bez "|" se text sám zalomí podle šířky obrazovky.
+# Chceš nadpis na jednom řádku? Prostě "|" nepiš. Chceš tři řádky?
+# Přidej druhé "|".
 
 # --- Úvodní stránka (Hero) ---
 HeroNadpis: Instalatérské technologie
 HeroPopis: Opravy · Rekonstrukce · Havárie
 
 # --- Sekce "O mně" ---
-OMneNadpis1: SPOLEHLIVOST
-OMneNadpis2: NA PRVNÍM MÍSTĚ
-OMneText1: Jmenuji se Jakub Šrajer a instalatérskému řemeslu se věnuji již přes 15 let. Za tu dobu jsem realizoval stovky zakázek — od rychlých oprav po kompletní rekonstrukce koupelen a kuchyní.
-OMneText2: Každou práci dokončuji načas, v dohodnutém rozsahu a s plnou zárukou. Po sobě vždy uklidím a odvezu odpad. Žádná překvapení na faktuře.
+OMneNadpis: SPOLEHLIVOST | NA PRVNÍM MÍSTĚ
+OMneText: Jmenuji se Jakub Šrajer a instalatérskému řemeslu se věnuji již přes 15 let. Za tu dobu jsem realizoval stovky zakázek — od rychlých oprav po kompletní rekonstrukce koupelen a kuchyní. | Každou práci dokončuji načas, v dohodnutém rozsahu a s plnou zárukou. Po sobě vždy uklidím a odvezu odpad. Žádná překvapení na faktuře.
 OMneVyhody: Záruka na práci 2 roky, Výjezd do 2 hodin, Cena dohodnutá předem, Čistota na pracovišti
 OMneOdznakMaly: Certifikát
 OMneOdznakVelky: Instalatér 1. třídy
@@ -20,7 +25,6 @@ SluzbyPopis: Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a
 SluzbyTlacitko: NEZÁVAZNÁ POPTÁVKA
 
 # --- Sekce "Kontakt" ---
-KontaktNadpis1: POJĎME TO
-KontaktNadpis2: VYŘEŠIT
+KontaktNadpis: POJĎME TO | VYŘEŠIT
 KontaktText: Napište mi co potřebujete, rád se vám ozvu zpět.
 KontaktTlacitko: ODESLAT POPTÁVKU

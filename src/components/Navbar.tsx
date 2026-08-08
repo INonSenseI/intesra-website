@@ -53,12 +53,14 @@ export default function Navbar() {
         {/* Logo / Brand */}
         <div className="flex items-center gap-3">
           <LogoBadge size="md" />
-          <span className="font-body text-white font-semibold tracking-wide text-sm md:text-base">
-            {site.name}{" "}
-            <span className="opacity-50 font-normal hidden sm:inline">
-              — {site.role}
+          {(site.name || site.role) && (
+            <span className="font-body text-white font-semibold tracking-wide text-sm md:text-base">
+              {site.name || site.role}
+              {site.name && site.role && (
+                <span className="opacity-50 font-normal hidden sm:inline"> — {site.role}</span>
+              )}
             </span>
-          </span>
+          )}
         </div>
 
         {/* Desktop Navigation */}

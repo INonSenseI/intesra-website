@@ -1,58 +1,34 @@
 import raw from "@/content/texty.txt?raw";
-import { parseFields } from "@/data/parseContent";
+import { parseFields, getField, splitBreaks, splitList } from "@/data/parseContent";
 
-// Výchozí texty použité, pokud v texty.txt něco chybí nebo je prázdné.
-const defaults = {
-  HeroNadpis: "Instalatérské technologie",
-  HeroPopis: "Opravy · Rekonstrukce · Havárie",
+const fields = parseFields(raw);
+const field = (key: string) => getField(fields, key);
 
-  OMneNadpis1: "SPOLEHLIVOST",
-  OMneNadpis2: "NA PRVNÍM MÍSTĚ",
-  OMneText1:
-    "Jmenuji se Jakub Šrajer a instalatérskému řemeslu se věnuji již přes 15 let. Za tu dobu jsem realizoval stovky zakázek — od rychlých oprav po kompletní rekonstrukce koupelen a kuchyní.",
-  OMneText2:
-    "Každou práci dokončuji načas, v dohodnutém rozsahu a s plnou zárukou. Po sobě vždy uklidím a odvezu odpad. Žádná překvapení na faktuře.",
-  OMneVyhody: "Záruka na práci 2 roky, Výjezd do 2 hodin, Cena dohodnutá předem, Čistota na pracovišti",
-  OMneOdznakMaly: "Certifikát",
-  OMneOdznakVelky: "Instalatér 1. třídy",
-
-  SluzbyPopis: "Vše od drobné opravy po velkou rekonstrukci. Poradím, nacením a odvedu práci na jedničku.",
-  SluzbyTlacitko: "NEZÁVAZNÁ POPTÁVKA",
-
-  KontaktNadpis1: "POJĎME TO",
-  KontaktNadpis2: "VYŘEŠIT",
-  KontaktText: "Napište mi co potřebujete, rád se vám ozvu zpět.",
-  KontaktTlacitko: "ODESLAT POPTÁVKU",
-};
-
-const parsed = parseFields(raw);
-
-// Prázdný řetězec ("Pole:") se chová stejně jako smazaný řádek — použije se výchozí text.
-function field(key: keyof typeof defaults): string {
-  const value = parsed[key];
-  return value && value.trim() ? value : defaults[key];
-}
-
+// Žádné neviditelné výchozí texty — prázdné/smazané pole odpovídající text
+// na webu responzivně schová (viz kapitola 2 návodu).
+//
+// Nadpisy a odstavce, které dřív bývaly rozdělené na víc polí (řádek 1,
+// řádek 2, ...), jsou teď jedno pole. Znak "|" v hodnotě znamená "tady
+// zalom na nový řádek/odstavec" — bez "|" se text sám zalomí podle šířky
+// obrazovky. Počet řádků/odstavců si tak volí ten, kdo obsah píše, ne kód.
 export const texts = {
-  heroHeading: field("HeroNadpis"),
+  heroHeadingLines: splitBreaks(field("HeroNadpis")),
   heroPopis: field("HeroPopis"),
 
-  aboutHeading1: field("OMneNadpis1"),
-  aboutHeading2: field("OMneNadpis2"),
-  aboutText1: field("OMneText1"),
-  aboutText2: field("OMneText2"),
-  aboutHighlights: field("OMneVyhody")
-    .split(",")
-    .map((item) => item.trim())
-    .filter(Boolean),
+  aboutHeadingLines: splitBreaks(field("OMneNadpis")),
+  aboutParagraphs: splitBreaks(field("OMneText")),
+  aboutHighlights: splitList(field("OMneVyhody")),
   aboutBadgeSmall: field("OMneOdznakMaly"),
   aboutBadgeLarge: field("OMneOdznakVelky"),
 
   servicesIntro: field("SluzbyPopis"),
   servicesButton: field("SluzbyTlacitko"),
 
-  contactHeading1: field("KontaktNadpis1"),
-  contactHeading2: field("KontaktNadpis2"),
+  contactHeadingLines: splitBreaks(field("KontaktNadpis")),
   contactIntro: field("KontaktText"),
-  contactButton: field("KontaktTlacitko"),
+  // Odesílací tlačítko formuláře je jediná výjimka s výchozím textem v tomto
+  // souboru: je to jediný způsob, jak formulář odeslat, takže schování by
+  // rozbilo funkčnost stránky (ne jen vzhled). Když pole necháš prázdné,
+  // tlačítko zůstane a použije se text "ODESLAT POPTÁVKU".
+  contactButton: field("KontaktTlacitko") ?? "ODESLAT POPTÁVKU",
 } as const;

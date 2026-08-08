@@ -3,6 +3,8 @@ import { siteImages } from "@/data/siteImages";
 import { texts } from "@/data/texts";
 
 export default function About() {
+  const hasBadge = Boolean(texts.aboutBadgeSmall || texts.aboutBadgeLarge);
+
   return (
     <section className="py-24 md:py-32 bg-white">
       <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -17,12 +19,18 @@ export default function About() {
                 alt="Jakub Šrajer - profesionální instalatér"
                 className="w-full h-80 md:h-[480px] object-cover"
               />
-              <div className="absolute bottom-4 left-4 px-4 py-3 rounded-sm bg-navy-dark">
-                <div className="font-body text-white/60 text-xs uppercase tracking-widest mb-1">
-                  {texts.aboutBadgeSmall}
+              {hasBadge && (
+                <div className="absolute bottom-4 left-4 px-4 py-3 rounded-sm bg-navy-dark">
+                  {texts.aboutBadgeSmall && (
+                    <div className="font-body text-white/60 text-xs uppercase tracking-widest mb-1">
+                      {texts.aboutBadgeSmall}
+                    </div>
+                  )}
+                  {texts.aboutBadgeLarge && (
+                    <div className="font-display text-white text-lg font-bold">{texts.aboutBadgeLarge}</div>
+                  )}
                 </div>
-                <div className="font-display text-white text-lg font-bold">{texts.aboutBadgeLarge}</div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -30,23 +38,33 @@ export default function About() {
           <div className="order-1 md:order-1">
             <Eyebrow label="O mně" />
 
-            <h2 className="font-display mb-6 leading-none text-[clamp(40px,6vw,64px)] font-extrabold text-navy-dark">
-              {texts.aboutHeading1}
-              <br />
-              {texts.aboutHeading2}
-            </h2>
+            {texts.aboutHeadingLines.length > 0 && (
+              <h2 className="font-display mb-6 leading-none text-[clamp(40px,6vw,64px)] font-extrabold text-navy-dark">
+                {texts.aboutHeadingLines.map((line, i) => (
+                  <span key={i}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
+              </h2>
+            )}
 
-            <p className="font-body leading-relaxed mb-6 text-[16px] text-slate-600">{texts.aboutText1}</p>
-            <p className="font-body leading-relaxed mb-10 text-[16px] text-slate-600">{texts.aboutText2}</p>
+            {texts.aboutParagraphs.map((paragraph, i) => (
+              <p key={i} className="font-body leading-relaxed mb-6 last:mb-10 text-[16px] text-slate-600">
+                {paragraph}
+              </p>
+            ))}
 
-            <div className="grid grid-cols-2 gap-4">
-              {texts.aboutHighlights.map((text) => (
-                <div key={text} className="flex items-start gap-2">
-                  <span className="text-red font-bold flex-shrink-0">✓</span>
-                  <span className="font-body text-sm font-medium text-navy-dark">{text}</span>
-                </div>
-              ))}
-            </div>
+            {texts.aboutHighlights.length > 0 && (
+              <div className="grid grid-cols-2 gap-4">
+                {texts.aboutHighlights.map((text) => (
+                  <div key={text} className="flex items-start gap-2">
+                    <span className="text-red font-bold flex-shrink-0">✓</span>
+                    <span className="font-body text-sm font-medium text-navy-dark">{text}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

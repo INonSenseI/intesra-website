@@ -15,11 +15,15 @@ export default function LogoBadge({ size = "md" }: LogoBadgeProps) {
     return (
       <img
         src={siteImages.logo}
-        alt={site.name}
+        alt={site.name ?? "Logo"}
         className={`${dimension} rounded-sm object-contain flex-shrink-0`}
       />
     );
   }
+
+  // Bez nahraného loga a bez iniciál (pole Zkratka prázdné) není co zobrazit —
+  // radši žádná ikona než prázdný barevný čtvereček.
+  if (!site.initials) return null;
 
   return (
     <div

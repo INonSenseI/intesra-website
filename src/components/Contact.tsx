@@ -78,64 +78,77 @@ export default function Contact() {
           <div>
             <Eyebrow label="Kontakt" />
 
-            <h2 className="font-display leading-none mb-8 text-white text-[clamp(40px,6vw,72px)] font-extrabold">
-              {texts.contactHeading1}
-              <br />
-              {texts.contactHeading2}
-            </h2>
+            {texts.contactHeadingLines.length > 0 && (
+              <h2 className="font-display leading-none mb-8 text-white text-[clamp(40px,6vw,72px)] font-extrabold">
+                {texts.contactHeadingLines.map((line, i) => (
+                  <span key={i}>
+                    {i > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
+              </h2>
+            )}
 
-            <p className="font-body mb-12 leading-relaxed text-white/60 text-[16px]">
-              {texts.contactIntro}
-            </p>
+            {texts.contactIntro && (
+              <p className="font-body mb-12 leading-relaxed text-white/60 text-[16px]">
+                {texts.contactIntro}
+              </p>
+            )}
 
             <div className="flex flex-col gap-4">
-              <a
-                href={site.phoneHref}
-                className="flex items-center gap-4 p-5 rounded-sm border border-white/10 transition-all duration-200 hover:bg-white/5 group"
-              >
-                <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-red">
-                  <PhoneIcon className="text-white" strokeWidth={2.5} />
-                </div>
-                <div>
-                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
-                    Telefon
+              {site.phoneDisplay && (
+                <a
+                  href={site.phoneHref}
+                  className="flex items-center gap-4 p-5 rounded-sm border border-white/10 transition-all duration-200 hover:bg-white/5 group"
+                >
+                  <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-red">
+                    <PhoneIcon className="text-white" strokeWidth={2.5} />
                   </div>
-                  <div className="font-display text-white font-bold text-[22px] group-hover:text-red-dark transition-colors">
-                    {site.phoneDisplay}
+                  <div>
+                    <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
+                      Telefon
+                    </div>
+                    <div className="font-display text-white font-bold text-[22px] group-hover:text-red-dark transition-colors">
+                      {site.phoneDisplay}
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              )}
 
-              <a
-                href={`mailto:${site.email}`}
-                className="flex items-center gap-4 p-5 rounded-sm border border-white/10 transition-all duration-200 hover:bg-white/5 group"
-              >
-                <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-white/[0.08]">
-                  <MailIcon className="text-white/70" />
-                </div>
-                <div>
-                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
-                    E-mail
+              {site.email && (
+                <a
+                  href={`mailto:${site.email}`}
+                  className="flex items-center gap-4 p-5 rounded-sm border border-white/10 transition-all duration-200 hover:bg-white/5 group"
+                >
+                  <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-white/[0.08]">
+                    <MailIcon className="text-white/70" />
                   </div>
-                  <div className="font-body text-white font-medium text-[15px] group-hover:text-red-dark transition-colors">
-                    {site.email}
+                  <div>
+                    <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
+                      E-mail
+                    </div>
+                    <div className="font-body text-white font-medium text-[15px] group-hover:text-red-dark transition-colors">
+                      {site.email}
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              )}
 
-              <div className="flex items-center gap-4 p-5 rounded-sm border border-white/10">
-                <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-white/[0.08]">
-                  <LocationIcon className="text-white/70" />
-                </div>
-                <div>
-                  <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
-                    Oblast působení
+              {site.serviceArea && (
+                <div className="flex items-center gap-4 p-5 rounded-sm border border-white/10">
+                  <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-white/[0.08]">
+                    <LocationIcon className="text-white/70" />
                   </div>
-                  <div className="font-body text-white font-medium text-[15px]">
-                    {site.serviceArea}
+                  <div>
+                    <div className="font-body text-xs uppercase tracking-widest mb-1 text-white/40">
+                      Oblast působení
+                    </div>
+                    <div className="font-body text-white font-medium text-[15px]">
+                      {site.serviceArea}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -150,7 +163,7 @@ export default function Contact() {
                   OZVEME SE!
                 </h3>
                 <p className="font-body text-white/50">
-                  Zpráva odeslána. {site.responseTime}
+                  Zpráva odeslána.{site.responseTime ? ` ${site.responseTime}` : ""}
                 </p>
               </div>
             ) : (

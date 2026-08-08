@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <LogoBadge size="sm" />
           <span className="font-body text-sm font-semibold text-navy-dark">
-            {site.name} — Instalatérství
+            {site.name ? `${site.name} — Instalatérství` : "Instalatérství"}
           </span>
         </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
 
         <p className="font-body text-xs text-slate-300">
-          © {new Date().getFullYear()} {site.name}. Všechna práva vyhrazena.
+          © {new Date().getFullYear()}{site.name ? ` ${site.name}.` : ""} Všechna práva vyhrazena.
         </p>
       </div>
     </footer>
