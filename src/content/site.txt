@@ -9,10 +9,8 @@
 Jmeno: Jakub Šrajer
 Zkratka: JŠ
 Role: Instalatér
-LetPraxe: 15
 Telefon: +420 732 942 262
 Email: info@intesra.cz
 Oblast: Frýdek-Místek a okolí
 Region: Frýdek-Místek · Ostrava · Okolí
-Vyjezd: Výjezd do 2 hodin
 OdpovedDoby: Odpověd v den požadavku
