@@ -1,4 +1,4 @@
-# Nápisy v úvodní sekci webu (např. VODA / PLYN / TEPLO vlevo od telefonu).
+# Nápisy v úvodní sekci webu (např. VODA / TEPLO vlevo od telefonu).
 #
 # Jedno pole Sluzby obsahuje libovolný počet položek oddělených znakem "|".
 # Každá položka má tvar ikona:TEXT — ikona musí být jedna z: voda, plyn,
@@ -7,4 +7,4 @@
 # Chceš jen dvě položky? Smaž jednu. Chceš čtyři? Přidej další za "|".
 # Web se přizpůsobí libovolnému počtu — nic se nerozbije.
 
-Sluzby: voda:VODA | plyn:PLYN | teplo:TEPLO
+Sluzby: voda:VODA | teplo:TEPLO
