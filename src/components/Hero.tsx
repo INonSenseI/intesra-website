@@ -18,7 +18,7 @@ export default function Hero() {
         <img
           src={siteImages.hero}
           alt="Profesionální instalatér při práci"
-          className="w-full h-full object-cover opacity-[0.55] mix-blend-luminosity"
+          className="w-full h-full object-cover"
         />
         {site.regionTagline && (
           <div className="absolute left-0 top-0 bottom-0 flex items-center">
