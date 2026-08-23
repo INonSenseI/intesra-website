@@ -14,3 +14,4 @@ Email: info@intesra.cz
 Oblast: Frýdek-Místek a okolí
 Region: Frýdek-Místek · Ostrava · Okolí
 OdpovedDoby: Odpověd v den požadavku
+TextikUvodDole:

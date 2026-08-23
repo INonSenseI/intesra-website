@@ -7,7 +7,12 @@ import { heroServices } from "@/data/heroServices";
 export default function Hero() {
   // "Jméno · X let praxe" — obě části jsou nepovinné, spojí se jen ty, které
   // opravdu existují. Když nezůstane nic, celý řádek se schová.
-  const eyebrowText = [site.name, site.experienceYears !== undefined ? `${site.experienceYears} let praxe` : null]
+  const eyebrowText = [
+    site.name,
+    site.experienceYears !== undefined
+      ? `${site.experienceYears} let praxe`
+      : null,
+  ]
     .filter(Boolean)
     .join(" · ");
 
@@ -103,11 +108,16 @@ export default function Hero() {
                   {site.phoneDisplay}
                 </span>
                 <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0 bg-red transition-transform duration-200 group-hover:scale-110 shadow-sm">
-                  <PhoneIcon size={18} className="text-white" strokeWidth={2.5} />
+                  <PhoneIcon
+                    size={18}
+                    className="text-white"
+                    strokeWidth={2.5}
+                  />
                 </div>
               </a>
               <p className="font-body text-[13px] text-slate-400 mt-4 md:mt-3">
-                {site.responseWindow ? `${site.responseWindow}. ` : ""}Cena dohodnutá předem.
+                {site.responseWindow ? `${site.responseWindow}. ` : ""}
+                {site.heroTextTiny}
               </p>
             </>
           )}

@@ -24,4 +24,5 @@ export const site = {
   regionTagline: field("Region"),
   responseWindow: field("Vyjezd"),
   responseTime: field("OdpovedDoby"),
+  heroTextTiny: field("TextikUvodDole") // TODO: přemístit do hero.ts a rozdělit heroServices.ts
 } as const;
