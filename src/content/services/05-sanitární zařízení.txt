@@ -1,0 +1,6 @@
+Nazev: Sanitární zařízení
+Popis: Montáž a servis ohřívačů vody, výměna záchodů, umyvadel, baterií a sprch.
+Stitky: Rychlé termíny
+Ikona: kapka
+Zvyraznit: ne
+Poradi: 5

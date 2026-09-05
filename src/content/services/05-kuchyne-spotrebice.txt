@@ -1,6 +1,0 @@
-Nazev: Kuchyně a spotřebiče
-Popis: Připojení myček, dřezů, varných desek, bojlerů a veškeré kuchyňské instalace.
-Stitky: Rychlé termíny
-Ikona: kuchyne
-Zvyraznit: ne
-Poradi: 5
