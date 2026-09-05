@@ -1,6 +1,6 @@
-Nazev: Topení a kotle
-Popis: Instalace, opravy a revize plynových kotlů, podlahového topení a radiátorů.
-Stitky: Plyn, Certifikovaný
+Nazev: Topení
+Popis: Podlahové topení, výměna a nové rozvody v otopné soustavě
+Stitky: 
 Ikona: plamen
 Zvyraznit: ne
 Poradi: 3
