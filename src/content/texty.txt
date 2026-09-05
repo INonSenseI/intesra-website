@@ -15,7 +15,7 @@ HeroPopis: Opravy · Rekonstrukce · Havárie
 
 # --- Sekce "O mně" ---
 OMneNadpis: MÁ PRÁCE JE MOJÍ VIZITKOU
-OMneText: Jmenuji se Jakub Šrajer a své řemeslo dělám s respektem a láskou k práci, jako bych to dělal pro sebe doma. Řídím se heslem, že nejdůležitější je práci udělat poctivě a umět si po sobě uklidit, protože nikdo si nechceme pozvat řemeslníka který práci odflákne a ještě budeme muset po něm uklízet. Domluva je semnou rychlá, stručná a vždy se snažím vyhovět požadavkům zákazníka, protože chci aby lidi co si mě zavolají jsou s mojí prací spokojení. | Neváhejte se ozvat a určitě se domluvíme.
+OMneText: Jmenuji se Jakub Šrajer a své řemeslo dělám s respektem a láskou k práci, jako bych pracoval pro sebe doma. Řídím se heslem, že nejdůležitější je práci udělat poctivě a umět si po sobě uklidit, protože nikdo si nechce pozvat řemeslníka, který práci odflákne a ještě po něm musí uklízet. Domluva je se mnou rychlá, stručná a vždy se snažím vyhovět požadavkům zákazníka, protože chci, aby lidé, co si mě zavolají, aby byli s mojí prací spokojeni. | Neváhejte se ozvat a určitě se domluvíme.
 OMneVyhody:
 OMneOdznakMaly:
 OMneOdznakVelky:
