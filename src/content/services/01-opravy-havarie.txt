@@ -2,9 +2,9 @@
 # Ikona musí být jedna z: klic, koupelna, plamen, trubka, koleno, kapka, kuchyne, lupa
 # Zvyraznit: ano/ne — tmavá zvýrazněná karta (použij max u jedné služby)
 
-Nazev: Opravy a havárie
-Popis: Prasklé potrubí, ucpané odtoky, kapající kohouty. Výjezd do 2 hodin, 7 dní v týdnu.
-Stitky: Havarijní servis, 24/7
+Nazev: Havarijní služba
+Popis: Vodovodní a kanalizační havárka. Viditelný únik vody i neviditelný, například ve zdi a v podlaze. Neodtékající odpadní potrubí. Výjezd do hodiny, 7 dní v týdnu.
+Stitky: Havarijní služba, 24/7
 Ikona: klic
 Zvyraznit: ne
 Poradi: 1
