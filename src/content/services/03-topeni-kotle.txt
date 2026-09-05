@@ -1,5 +1,5 @@
 Nazev: Topení
-Popis: Podlahové topení, výměna a nové rozvody v otopné soustavě
+Popis: Podlahové topení, výměna a nové rozvody v otopné soustavě a instalace a výměna otopných těles.
 Stitky: 
 Ikona: plamen
 Zvyraznit: ne
