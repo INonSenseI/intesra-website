@@ -1,5 +1,5 @@
 Nazev: Rozvody vody
-Popis: Nové rozvody studené i teplé vody, přípojky, vodoměry a tlakové zkoušky.
+Popis: Nové rozvody studené i teplé vody
 Stitky: Novostavby, Rekonstrukce
 Ikona: trubka
 Zvyraznit: ne
