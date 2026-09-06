@@ -1,6 +1,6 @@
 Nazev: Domovní kanalizace 
 Popis: instalace i rekonstrukce odpadního potrubí na klíč
 Stitky: novostavby a rekonstrukce
-Ikona: klíč
+Ikona: trubka
 Zvyraznit: ne
 Poradi: 6
