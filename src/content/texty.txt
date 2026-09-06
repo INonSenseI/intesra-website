@@ -11,7 +11,7 @@
 
 # --- Úvodní stránka (Hero) ---
 HeroNadpis: Instalatérské technologie Šrajer
-HeroPopis: Opravy · Rekonstrukce · Havárie
+HeroPopis: instalace · Rekonstrukce · Havárie
 
 # --- Sekce "O mně" ---
 OMneNadpis: MÁ PRÁCE JE MOJÍ VIZITKOU
