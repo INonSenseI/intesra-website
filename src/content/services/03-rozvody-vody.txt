@@ -1,6 +1,6 @@
 Nazev: Rozvody vody
 Popis: Nové rozvody studené i teplé vody
 Stitky: Novostavby, Rekonstrukce
-Ikona: trubka
+Ikona: koleno
 Zvyraznit: ne
 Poradi: 4
