@@ -7,4 +7,4 @@
 # Chceš jen dvě položky? Smaž jednu. Chceš čtyři? Přidej další za "|".
 # Web se přizpůsobí libovolnému počtu — nic se nerozbije.
 
-Sluzby: voda:VODA | teplo:TEPLO
+Sluzby: voda:VODA | teplo:TEPLO | plyn:PLYN
