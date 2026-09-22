@@ -3,4 +3,4 @@ Popis: Nové rozvody studené i teplé vody
 Stitky: Novostavby, Rekonstrukce
 Ikona: koleno
 Zvyraznit: ne
-Poradi: 4
+Poradi: 2
