@@ -3,4 +3,4 @@ Popis: Montáž a servis ohřívačů vody, výměna záchodů, umyvadel, bateri
 Stitky: Rychlé termíny
 Ikona: kapka
 Zvyraznit: ne
-Poradi: 5
+Poradi: 7
