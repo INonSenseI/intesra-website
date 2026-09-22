@@ -3,4 +3,4 @@ Popis: instalace i rekonstrukce odpadního potrubí na klíč
 Stitky: novostavby a rekonstrukce
 Ikona: trubka
 Zvyraznit: ne
-Poradi: 6
+Poradi: 3
