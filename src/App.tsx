@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import Gallery from "./components/gallery/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import GalleryDisclaimer from "./components/GalleryDisclaimer";
 
 export default function App() {
   return (
@@ -14,7 +15,7 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Gallery />
+        <GalleryDisclaimer />
         <Contact />
       </main>
       <Footer />

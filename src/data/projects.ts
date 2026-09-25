@@ -64,6 +64,7 @@ function detectMedia(images: Record<string, string>): Media | null {
 
   const single = findImage(images, "foto");
   if (single) {
+    console.log("REee")
     return { mediaType: "single", image: single };
   }
 
