@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
-import Gallery from "./components/gallery/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import GalleryDisclaimer from "./components/GalleryDisclaimer";
