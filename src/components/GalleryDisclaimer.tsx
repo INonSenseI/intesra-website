@@ -1,4 +1,4 @@
-import Eyebrow from "./ui/Eyebrow";
+//import Eyebrow from "./ui/Eyebrow";
 
 export default function GalleryDisclaimer() {
   return (
