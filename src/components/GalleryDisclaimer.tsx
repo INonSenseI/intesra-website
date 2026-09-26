@@ -6,7 +6,7 @@ export default function GalleryDisclaimer() {
       <div className="max-w-6xl mx-auto px-5 md:px-8">
         {/* Hlavička */}
         <div className="mb-16">
-          <Eyebrow label="Proč zde nejsou fotky?" />
+          {/*<Eyebrow label="Proč zde nejsou fotky?" />*/}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <h2 className="font-display leading-none text-[clamp(40px,6vw,72px)] font-extrabold text-navy-dark">
               REFERENCE
@@ -17,7 +17,7 @@ export default function GalleryDisclaimer() {
         {/* Cards */}
         <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
           {[
-            "Soukromí mých klientů je pro mě důležité.",
+            "Soukromí mých klientů je pro mě prioritou.",
             "Základem je pro mě spokojenost zákazníka a vždy vyhovět jeho požadavkům.",
             "Fotky projektů nejsou veřejné, protože ctím soukromí svých klientů a zachovávám profesionální přístup.",
           ].map((text) => (
