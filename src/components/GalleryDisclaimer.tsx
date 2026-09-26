@@ -13,19 +13,23 @@ export default function GalleryDisclaimer() {
             </h2>
           </div>
         </div>
-        <div className="flex flex-row items-stretch justify-evenly space-x-10">
+
+        {/* Cards */}
+        <div className="flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
           {[
             "Soukromí mých klientů je pro mě důležité.",
             "Základem je pro mě spokojenost zákazníka a vždy vyhovět jeho požadavkům.",
             "Fotky projektů nejsou veřejné, protože ctím soukromí svých klientů a zachovávám profesionální přístup.",
           ].map((text) => (
-            <div className="relative flex flex-1">
+            <div key={text} className="relative flex flex-1 min-w-0">
               {/* black offset */}
               <div className="absolute inset-0 translate-x-3 translate-y-3 border border-red" />
 
               {/* blue card */}
-              <div className="relative z-10 flex flex-1 items-center gap-4 rounded-sm border-5 border-surface bg-navy p-4">
-                <p className="text-white text-center font-medium">{text}</p>
+              <div className="relative z-10 flex flex-1 items-center justify-center gap-4 rounded-sm border-5 border-surface bg-navy p-4">
+                <p className="text-white text-center font-medium">
+                  {text}
+                </p>
               </div>
             </div>
           ))}
