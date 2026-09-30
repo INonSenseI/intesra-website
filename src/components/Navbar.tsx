@@ -57,7 +57,10 @@ export default function Navbar() {
             <span className="font-body text-white font-semibold tracking-wide text-sm md:text-base">
               {site.name || site.role}
               {site.name && site.role && (
-                <span className="opacity-50 font-normal hidden sm:inline"> — {site.role}</span>
+                <span className="opacity-50 font-normal hidden sm:inline">
+                  {" "}
+                  — {site.role}
+                </span>
               )}
             </span>
           )}
@@ -71,13 +74,6 @@ export default function Navbar() {
             className={`font-body text-sm font-medium transition-colors duration-200 ${desktopNavLinkColor}`}
           >
             Služby
-          </a>
-          <a
-            href="#galerie"
-            onClick={(e) => handleNavClick(e, "galerie")}
-            className={`font-body text-sm font-medium transition-colors duration-200 ${desktopNavLinkColor}`}
-          >
-            Galerie
           </a>
           <a
             href="#kontakt"

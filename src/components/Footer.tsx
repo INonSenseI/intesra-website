@@ -3,7 +3,6 @@ import LogoBadge from "@/components/ui/LogoBadge";
 
 const navLinks = [
   { label: "Služby", href: "#sluzby" },
-  { label: "Galerie", href: "#galerie" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
@@ -31,7 +30,8 @@ export default function Footer() {
         </div>
 
         <p className="font-body text-xs text-slate-300">
-          © {new Date().getFullYear()}{site.name ? ` ${site.name}.` : ""} Všechna práva vyhrazena.
+          © {new Date().getFullYear()}
+          {site.name ? ` ${site.name}.` : ""} Všechna práva vyhrazena.
         </p>
       </div>
     </footer>
